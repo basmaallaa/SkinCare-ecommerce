@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <title>Landing page</title>
+</head>
+<body class="bg-[#E0E4D4] font-sans">
+  <header class="fixed top-0 inset-x-0 z-50  backdrop-blur-md ">
+    <nav aria-label="Global" class="flex items-center justify-between  p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#hero" class="-m-1.5 p-1.5">
+          <h1 class="font-bold text-3xl text-lime-950">SKINECARE</h1>
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#ourStory" class="text-sm/6 font-semibold text-lime-950">Our Story</a>
+        <a href="productList.html" class="text-sm/6 font-semibold text-lime-950">All Products</a>
+        <a href="#categories" class="text-sm/6 font-semibold text-lime-950">Categories</a>
+        <a href="#best-seller" class="text-sm/6 font-semibold text-lime-950">Best Seller</a>
+        <a href="#fq" class="text-sm/6 font-semibold text-lime-950">F&Q</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-5">
+  <div>
+      <a href="cart.html" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur" >
+    
+        <i class="fa-solid fa-bag-shopping text-lg text-lime-950"></i>
+        <span  class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </a>
+  </div>
+  <div class="user-area" >
+    <a href="login.html" class=" w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur" >
+    <i class="fa-regular fa-user text-lime-950"></i>
+    </a>
+  </div>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#E0E4D4] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="#hero" class="-m-1.5 p-1.5">
+                <h1 class="font-bold text-3xl text-lime-950">SKINECARE</h1>
+
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a href="#ourStory" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">Our Story</a>
+                  <a href="productList.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">All Products</a>
+                  <a href="#categories" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">Categories</a>
+                  <a href="#best-seller" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">Best Seller</a>
+                  <a href="#fq" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">F&Q</a>
+                </div>
+                <div class="py-6 flex lg:flex lg:flex-1 lg:justify-end gap-5">
+                  <div>
+                  <a href="cart.html" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur">  
+                      <i class="fa-solid fa-bag-shopping text-lg text-lime-950"></i>
+                      <span  class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                  </a>
+                  </div>
+                  <div class="user-area">
+                  <a href="login.html" class="user-area w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur">  
+                      <i class="fa-regular fa-user text-lime-950"></i>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+<section id="hero" class="px-10 pt-10 pb-20 relative sm:px-6 lg:px-16 lg:py-16 overflow-hidden font-sans">
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
+
+<div class="text-center lg:text-left order-2 lg:order-1 ">
+  <p class="text-lime-950 w-64 leading-relaxed mb-6 max-w-sm mx-auto lg:mx-0 leading-relaxed mb-6">
+    Transform your skincare routine with premium products that restore,
+    protect, and enhance your natural glow every day.
+  </p>
+
+  <a href="productList.html">
+  <button  class="bg-lime-950 text-white px-6 py-3 mb-6 rounded-full hover:scale-105 transition">
+    Shop Now
+  </button>
+</a>
+</div>
+
+
+<div class="text-center lg:space-y-4  order-1 lg:order-2 ">
+
+<h1 class="mt-20 lg:mt-20 text-4xl sm:text-5xl lg:text-7xl font-bold text-lime-950 leading-[0.9] tracking-tight ">
+  GLOW <br>
+  NATUR- <br>
+  ALLY
+</h1>
+
+<div class="flex justify-center relative z-10  lg:mt-20 lg:translate-y-12">
+  <img 
+  src="images/our-philosophy.png"
+class="w-56 sm:w-64 lg:w-72 h-80 sm:h-96 lg:h-[420px] object-cover rounded-2xl shadow-lg bg-white"
+  />
+</div>
+
+</div>
+
+
+    <div class="flex flex-col items-center lg:items-end space-y-6 order-3 ">
+
+      <img src="images/images.png"
+           class="w-12 h-30 lg:w-30 sm:w-20 rounded-xl shadow-md -mt-6 lg:-translate-y-50"/>
+
+      <p class="flex items-center gap-2 text-xl">
+        <span class="font-semibold text-lime-950">4.8/5</span>
+        <i class="fa-solid fa-star text-yellow-400"></i>
+        <span class="text-lime-950">23,510</span>
+      </p>
+    </div>
+
+</div>
+
+  <h1 class="hidden lg:block absolute bottom-[-80px] left-1/2 -translate-x-1/2 
+             text-[220px] xl:text-[300px] font-bold 
+             text-lime-950
+             w-full text-center 
+             pb-12
+             z-0 select-none leading-none tracking-tight">
+    SKINECARE
+  </h1>
+
+</section>
+<section id="ourStory" class="bg-[#ECECE6] pb-10 pt-20 px-6 sm:px-10 lg:px-20 transition-all duration-700">
+
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 items-center">
+
+    <p id="text" 
+       class="col-span-1 lg:col-span-2 
+              text-lime-950/90 
+              text-sm sm:text-base md:text-lg lg:text-3xl 
+              font-light leading-relaxed lg:leading-[1.8]">
+      Experience the ultimate in skincare with our expertly formulated products,
+      crafted to nourish, protect, and rejuvenate your skin.
+      Combining the finest natural ingredients with advanced science,
+      our collection ensures every skin type can achieve a radiant, healthy glow.
+      Embrace your beauty with confidence every day.
+    </p>
+
+    <div class="col-span-1">
+      <img src="images/storyImg.png" 
+           class="rounded-2xl w-full h-40 sm:h-52 md:h-64 lg:h-[400px] object-cover">
+    </div>
+
+  </div>
+
+</section>
+<section id="categories" class="bg-[#ECECE6] py-16 px-8 lg:px-20">
+  <div class="mb-8">
+    <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gray-400 text-sm bg-white text-lime-950">
+      <span class="w-2 h-2 bg-black rounded-full"></span>
+      Our Categories
+    </span>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-[200px] gap-6">
+    <div onclick="goToCategory('Vitamin Pills')" class="relative row-span-2 overflow-hidden group cursor-pointer">
+      <img src="images/v3.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 " />
+      <span class="absolute top-4 left-1/2 -translate-x-1/2 text-white text-xl tracking-widest">
+        VITAMIN PILLS
+      </span>
+    </div>
+
+    <div onclick="goToCategory('Skin Care')" class="relative row-span-3 overflow-hidden group cursor-pointer">
+      <img src="images/sk1.jpg" class="w-full h-full object-cover object-bottom transition-transform duration-500 group-hover:scale-105" />
+  
+      <span class="absolute top-4 left-1/2 -translate-x-1/2 text-white text-xl tracking-widest">
+        SKIN CARE
+      </span>
+    </div>
+    
+    <div onclick="goToCategory('Dental Care')" class="relative row-span-3 overflow-hidden group cursor-pointer">
+      <img src="images/d2.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+    
+      <span class="absolute top-4 left-1/2 -translate-x-1/2 text-white text-xl tracking-widest">
+        DENTAL CARE
+      </span>
+    </div>
+    
+    
+    <div onclick="goToCategory('Hair Care')" class="relative row-span-2 overflow-hidden group cursor-pointer">
+      <img src="images/h.jpg" class="w-[700px] h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+    
+      <span class="absolute top-4 left-1/2 -translate-x-1/2 text-white text-xl row-span-3">
+        HAIR CARE
+      </span>
+    </div>
+
+  </div>
+
+</section>
+<section id="best-seller" class="py-16 px-8 lg:px-20 bg-[#ECECE6]">
+  <div class="mb-6">
+    <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gray-400 text-sm bg-white text-lime-950">
+      <span class="w-2 h-2 bg-black rounded-full"></span>
+      Best Selling Products
+    </span>
+  </div>
+   <div class="flex justify-between items-center mb-12">
+    <h2 class="text-4xl lg:text-5xl font-medium font-sans text-lime-950 leading-tight max-w-3xl mx-auto">
+      Skincare That Brings Out <br> Your Natural Radiance
+    </h2>
+  </div>
+  <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  </div>
+</section>
+<section id="fq" class="bg-[#ECECE6] py-20 px-8 sm:px-8 lg:px-20">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <div class="relative mt-20">
+        <img src="images/fq.jpg" class="rounded-2xl w-full  h-100 sm:h-80 md:h-96 object-cover">
+        <div class="absolute bottom-6 left-6 bg-[#E0E4D4] px-4 py-2 rounded-full shadow flex items-center gap-2">
+        <span class="bg-green-900 text-white p-2 rounded-full">
+          <i class="fa-solid fa-headphones"></i>
+        </span>
+        <p class="text-sm">24/7 We’re Here <br> to Help You</p>
+      </div>
+    </div>
+
+    <div>
+      <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gray-400 text-sm bg-white text-lime-950">
+        <span class="w-2 h-2 bg-black rounded-full"></span>
+        Frequently Asked Question
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-medium font-sans text-lime-950 leading-snug max-w-3xl mx-auto mb-10 mt-5">
+      Answers to Your <br>
+        Skincare Questions, All <br>
+        in One Place.
+    </h2>
+
+    <div class="space-y-4">
+      <div class="border rounded-xl p-4 bg-white">
+          <div class="flex justify-between items-center text-lime-950 cursor-pointer" onclick="toggleFAQ(this)">
+            <p>Are your products safe for sensitive skin?</p>
+            <span>+</span>
+          </div>
+          <div class="mt-2 text-sm text-gray-600 hidden">
+            Yes, our products are designed for all skin types.
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="flex justify-between items-center text-lime-950 cursor-pointer" onclick="toggleFAQ(this)">
+            <p>Are your products cruelty-free?</p>
+            <span>+</span>
+          </div>
+          <div class="mt-2 text-sm text-gray-600 hidden">
+            Absolutely! All our products are cruelty-free and most are vegan.
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="flex justify-between items-center text-lime-950 cursor-pointer" onclick="toggleFAQ(this)">
+            <p>What’s your return policy?</p>
+            <span>+</span>
+          </div>
+          <div class="mt-2 text-sm text-gray-600 hidden">
+            You can return within 30 days.
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="flex justify-between items-center text-lime-950 cursor-pointer" onclick="toggleFAQ(this)">
+            <p>Do you ship internationally?</p>
+            <span>+</span>
+          </div>
+          <div class="mt-2 text-sm text-gray-600 hidden">
+           Yes, we ship internationally. Shipping costs and delivery times may vary depending on your country. Check the shipping details at checkout for exact rates.
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="flex justify-between items-center text-lime-950 cursor-pointer" onclick="toggleFAQ(this)">
+            <p>How do I choose the right product?</p>
+            <span>+</span>
+          </div>
+          <div class="mt-2 text-sm text-gray-600 hidden">
+           To pick the right skincare product:<br><br>
+
+           <b>- Know your skin type:</b> oily, dry, combination, or sensitive.<br>
+          <b>- Identify your goal:</b> hydration, anti-aging, acne control, brightening, etc.<br>
+          <b>- Check ingredients:</b> avoid ingredients you’re allergic to; look for active ingredients suited for your concerns.<br>
+          <b>- Read product descriptions & reviews:</b> they often indicate what skin type it works best for.<br>
+          <b>- Start small:</b> try travel sizes or testers if available before committing to full-size products.
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+</section>
+<footer class="bg-gradient-to-r from-[#1f2f28] to-[#2c3e35] text-gray-300 px-8 py-20 relative overflow-hidden">
+  <div class="flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-light leading-snug">
+        Join The Skincare <br> Community Now
+      </h2>
+
+      <div class="flex gap-6 mt-10 text-sm text-gray-400">
+        <a href="#" class="hover:text-white transition">Facebook</a>
+        <a href="#" class="hover:text-white transition">Instagram</a>
+        <a href="#" class="hover:text-white transition">Tiktok</a>
+      </div>
+    </div>
+
+    <div class="md:text-right">
+      <p class="text-sm text-gray-400 mb-2">Get in Touch</p>
+      <h3 class="text-2xl md:text-3xl font-light">
+        contact.skincare.com
+      </h3>
+
+      <div class="flex md:justify-end gap-6 mt-10 text-sm text-gray-400">
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Cookies Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <h1 class="hidden lg:block absolute bottom-[-80px] left-1/2 -translate-x-1/2 
+             text-[220px] xl:text-[300px] md:text-[180px] font-bold 
+             text-white/5 whitespace-nowrap
+             w-full text-center 
+             pb-12
+             z-0 select-none leading-none tracking-tight">
+    SKINECARE
+  </h1>
+  <div class="mt-16 pt-6 border-t border-white/10 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
+  
+  <p>
+    © 2026 SKINECARE. All rights reserved.
+  </p>
+
+  <p class="text-gray-500">
+     Developed by Basma Alaa
+  </p>
+
+</div>
+</footer>
+<script src="landing.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

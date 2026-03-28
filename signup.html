@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <title>sign up</title>
+</head>
+<body>
+<section class="min-h-screen flex items-center justify-center bg-[#E0E4D4] px-4">
+
+  <div class="flex flex-col lg:flex-row bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl w-full">
+    <div class="flex justify-center mt-10 lg:hidden">
+  <img src="images/our-philosophy.png"
+       class="w-17 h-17 rounded-full object-cover shadow-md">
+    </div>
+    <div class="hidden lg:block lg:w-1/2">
+      <img src="images/our-philosophy.png"
+           class="w-full h-full object-cover">
+    </div>
+
+    <div class="w-full lg:w-1/2 p-8 flex flex-col justify-center">
+
+      <h2 class="text-3xl mb-2 text-lime-900">Create Account</h2>
+      <p class="text-gray-500 mb-6">Sign up to get started</p>
+
+      <form id="signup-form" class="space-y-4">
+
+        <input type="text" id="name" placeholder="Name"
+          class="w-full p-3 border rounded">
+
+        <input type="email" id="email" placeholder="Email"
+          class="w-full p-3 border rounded">
+
+        <input type="password" id="password" placeholder="Password"
+          class="w-full p-3 border rounded">
+
+        <button class="w-full bg-lime-900 text-white py-3 rounded">
+          SIGN UP
+        </button>
+
+      </form>
+
+      <p class="text-sm mt-4">
+        Already have an account?
+        <a href="login.html" class="text-lime-900 font-semibold">Login</a>
+      </p>
+
+    </div>
+
+  </div>
+<script src="sign.js"></script>
+</section>
+</body>
+</html>

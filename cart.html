@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <title>cart</title>
+</head>
+<body class="bg-[#E0E4D4] font-sans">
+        <header class="fixed top-0 inset-x-0 z-50  backdrop-blur-md ">
+    <nav aria-label="Global" class="flex items-center justify-between  p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="index.html" class="-m-1.5 p-1.5">
+          <h1 class="font-bold text-3xl text-lime-950">SKINECARE</h1>
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="index.html" class="text-sm/6 font-semibold text-lime-950">Home</a>
+        <a href="productList.html" class="text-sm/6 font-semibold text-lime-950">All Products</a>
+        
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-5">
+
+  <div>
+      <a href="cart.html" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur" >
+    
+        <i class="fa-solid fa-bag-shopping text-lg text-lime-950"></i>
+          <span  class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+
+        </a>
+  </div>
+
+  <div class="user-area" >
+    <a href="login.html" class=" w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur" >
+    <i class="fa-regular fa-user text-lime-950"></i>
+    </a>
+  </div>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#E0E4D4] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="index.html" class="-m-1.5 p-1.5">
+                <h1 class="font-bold text-3xl text-lime-950">SKINECARE</h1>
+
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">Home</a>
+                  <a href="productList.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-lime-950 hover:bg-gray-50">All Products</a>
+                  
+                </div>
+                <div class="py-6 flex lg:flex lg:flex-1 lg:justify-end gap-5">
+                  <div>  
+                  <a href="cart.html" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur">  
+                      <i class="fa-solid fa-bag-shopping text-lg text-lime-950"></i>
+                    <span  class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                  </a>
+                  </div>
+                  <div class="user-area">
+                  <a href="#" class="user-area w-9 h-9 flex items-center justify-center rounded-full bg-white/60 hover:bg-white transition cursor-pointer shadow-sm backdrop-blur">  
+                      <i class="fa-regular fa-user text-lime-950"></i>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+  <section class="bg-[#ECECE6] pt-20 min-h-screen py-16 px-8 lg:px-20">
+  <h2 class="text-3xl font-semibold mb-10 text-lime-950">Your Cart</h2>
+    <div class="flex flex-col lg:flex-row gap-10">
+    <div class="lg:w-2/3 space-y-4">
+        <div id="cart-container" class="space-y-4"></div>
+    </div>
+  <!-- total -->
+  <div class="lg:w-1/3 bg-white p-6 rounded-xl shadow h-fit sticky top-24 mt-6 lg:mt-0">
+      <h3 class="text-xl font-semibold mb-4 text-lime-950">Summary</h3>
+      <div class="flex justify-between mb-2">
+        <span class="text-lime-950">Subtotal</span>
+        <span id="subtotal" class="text-lime-950">$0</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-lime-950">Shipping</span>
+        <span id="shipping" class="text-lime-950">$4.00</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span class="text-lime-950">Discount</span>
+        <span id="discount" class="text-lime-950">-$2.00</span>
+      </div>
+      <hr class="my-2">
+      <div class="flex justify-between font-semibold text-lg text-lime-950">
+        <span>Total</span>
+        <span id="total-price">$0</span>
+      </div>
+    </div>
+</div>
+</section>
+<footer class="bg-gradient-to-r from-[#1f2f28] to-[#2c3e35] text-gray-300 px-8 py-20 relative overflow-hidden">
+  <div class="flex flex-col md:flex-row justify-between gap-10">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-light leading-snug">
+        Join The Skincare <br> Community Now
+      </h2>
+
+      <div class="flex gap-6 mt-10 text-sm text-gray-400">
+        <a href="#" class="hover:text-white transition">Facebook</a>
+        <a href="#" class="hover:text-white transition">Instagram</a>
+        <a href="#" class="hover:text-white transition">Tiktok</a>
+      </div>
+    </div>
+
+    <div class="md:text-right">
+      <p class="text-sm text-gray-400 mb-2">Get in Touch</p>
+      <h3 class="text-2xl md:text-3xl font-light">
+        contact.skincare.com
+      </h3>
+
+      <div class="flex md:justify-end gap-6 mt-10 text-sm text-gray-400">
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition">Cookies Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <h1 class="hidden lg:block absolute bottom-[-80px] left-1/2 -translate-x-1/2 
+             text-[220px] xl:text-[300px] md:text-[180px] font-bold 
+             text-white/5 whitespace-nowrap
+             w-full text-center 
+             pb-12
+             z-0 select-none leading-none tracking-tight">
+    SKINECARE
+  </h1>
+  <div class="mt-16 pt-6 border-t border-white/10 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
+  
+  <p>
+    © 2026 SKINECARE. All rights reserved.
+  </p>
+
+  <p class="text-gray-500">
+     Developed by Basma Alaa
+  </p>
+
+</div>
+</footer>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
